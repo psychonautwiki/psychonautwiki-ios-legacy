@@ -1,0 +1,541 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		53FC6DBC1E5A5E2F00397CB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBB1E5A5E2F00397CB6 /* AppDelegate.swift */; };
+		53FC6DBE1E5A5E2F00397CB6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */; };
+		53FC6DC01E5A5E2F00397CB6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBF1E5A5E2F00397CB6 /* DetailViewController.swift */; };
+		53FC6DC31E5A5E3000397CB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FC6DC11E5A5E3000397CB6 /* Main.storyboard */; };
+		53FC6DC51E5A5E3000397CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FC6DC41E5A5E3000397CB6 /* Assets.xcassets */; };
+		53FC6DC81E5A5E3000397CB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FC6DC61E5A5E3000397CB6 /* LaunchScreen.storyboard */; };
+		53FC6DD31E5A5E3000397CB6 /* PsychonautWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DD21E5A5E3000397CB6 /* PsychonautWikiTests.swift */; };
+		53FC6DDE1E5A5E3000397CB6 /* PsychonautWikiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DDD1E5A5E3000397CB6 /* PsychonautWikiUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		53FC6DCF1E5A5E3000397CB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FC6DB01E5A5E2F00397CB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53FC6DB71E5A5E2F00397CB6;
+			remoteInfo = PsychonautWiki;
+		};
+		53FC6DDA1E5A5E3000397CB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FC6DB01E5A5E2F00397CB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53FC6DB71E5A5E2F00397CB6;
+			remoteInfo = PsychonautWiki;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		53FC6DB81E5A5E2F00397CB6 /* PsychonautWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PsychonautWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53FC6DBB1E5A5E2F00397CB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		53FC6DBF1E5A5E2F00397CB6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		53FC6DC21E5A5E3000397CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		53FC6DC41E5A5E3000397CB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53FC6DC71E5A5E3000397CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		53FC6DC91E5A5E3000397CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53FC6DCE1E5A5E3000397CB6 /* PsychonautWikiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PsychonautWikiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53FC6DD21E5A5E3000397CB6 /* PsychonautWikiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PsychonautWikiTests.swift; sourceTree = "<group>"; };
+		53FC6DD41E5A5E3000397CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53FC6DD91E5A5E3000397CB6 /* PsychonautWikiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PsychonautWikiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53FC6DDD1E5A5E3000397CB6 /* PsychonautWikiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PsychonautWikiUITests.swift; sourceTree = "<group>"; };
+		53FC6DDF1E5A5E3000397CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53FC6DB51E5A5E2F00397CB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FC6DCB1E5A5E3000397CB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FC6DD61E5A5E3000397CB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53FC6DAF1E5A5E2F00397CB6 = {
+			isa = PBXGroup;
+			children = (
+				53FC6DBA1E5A5E2F00397CB6 /* PsychonautWiki */,
+				53FC6DD11E5A5E3000397CB6 /* PsychonautWikiTests */,
+				53FC6DDC1E5A5E3000397CB6 /* PsychonautWikiUITests */,
+				53FC6DB91E5A5E2F00397CB6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		53FC6DB91E5A5E2F00397CB6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53FC6DB81E5A5E2F00397CB6 /* PsychonautWiki.app */,
+				53FC6DCE1E5A5E3000397CB6 /* PsychonautWikiTests.xctest */,
+				53FC6DD91E5A5E3000397CB6 /* PsychonautWikiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53FC6DBA1E5A5E2F00397CB6 /* PsychonautWiki */ = {
+			isa = PBXGroup;
+			children = (
+				53FC6DBB1E5A5E2F00397CB6 /* AppDelegate.swift */,
+				53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */,
+				53FC6DBF1E5A5E2F00397CB6 /* DetailViewController.swift */,
+				53FC6DC11E5A5E3000397CB6 /* Main.storyboard */,
+				53FC6DC41E5A5E3000397CB6 /* Assets.xcassets */,
+				53FC6DC61E5A5E3000397CB6 /* LaunchScreen.storyboard */,
+				53FC6DC91E5A5E3000397CB6 /* Info.plist */,
+			);
+			path = PsychonautWiki;
+			sourceTree = "<group>";
+		};
+		53FC6DD11E5A5E3000397CB6 /* PsychonautWikiTests */ = {
+			isa = PBXGroup;
+			children = (
+				53FC6DD21E5A5E3000397CB6 /* PsychonautWikiTests.swift */,
+				53FC6DD41E5A5E3000397CB6 /* Info.plist */,
+			);
+			path = PsychonautWikiTests;
+			sourceTree = "<group>";
+		};
+		53FC6DDC1E5A5E3000397CB6 /* PsychonautWikiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				53FC6DDD1E5A5E3000397CB6 /* PsychonautWikiUITests.swift */,
+				53FC6DDF1E5A5E3000397CB6 /* Info.plist */,
+			);
+			path = PsychonautWikiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53FC6DB71E5A5E2F00397CB6 /* PsychonautWiki */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53FC6DE21E5A5E3000397CB6 /* Build configuration list for PBXNativeTarget "PsychonautWiki" */;
+			buildPhases = (
+				53FC6DB41E5A5E2F00397CB6 /* Sources */,
+				53FC6DB51E5A5E2F00397CB6 /* Frameworks */,
+				53FC6DB61E5A5E2F00397CB6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PsychonautWiki;
+			productName = PsychonautWiki;
+			productReference = 53FC6DB81E5A5E2F00397CB6 /* PsychonautWiki.app */;
+			productType = "com.apple.product-type.application";
+		};
+		53FC6DCD1E5A5E3000397CB6 /* PsychonautWikiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53FC6DE51E5A5E3000397CB6 /* Build configuration list for PBXNativeTarget "PsychonautWikiTests" */;
+			buildPhases = (
+				53FC6DCA1E5A5E3000397CB6 /* Sources */,
+				53FC6DCB1E5A5E3000397CB6 /* Frameworks */,
+				53FC6DCC1E5A5E3000397CB6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53FC6DD01E5A5E3000397CB6 /* PBXTargetDependency */,
+			);
+			name = PsychonautWikiTests;
+			productName = PsychonautWikiTests;
+			productReference = 53FC6DCE1E5A5E3000397CB6 /* PsychonautWikiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		53FC6DD81E5A5E3000397CB6 /* PsychonautWikiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53FC6DE81E5A5E3000397CB6 /* Build configuration list for PBXNativeTarget "PsychonautWikiUITests" */;
+			buildPhases = (
+				53FC6DD51E5A5E3000397CB6 /* Sources */,
+				53FC6DD61E5A5E3000397CB6 /* Frameworks */,
+				53FC6DD71E5A5E3000397CB6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53FC6DDB1E5A5E3000397CB6 /* PBXTargetDependency */,
+			);
+			name = PsychonautWikiUITests;
+			productName = PsychonautWikiUITests;
+			productReference = 53FC6DD91E5A5E3000397CB6 /* PsychonautWikiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53FC6DB01E5A5E2F00397CB6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Waldemar Barbe";
+				TargetAttributes = {
+					53FC6DB71E5A5E2F00397CB6 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2BN3AJZW49;
+						ProvisioningStyle = Automatic;
+					};
+					53FC6DCD1E5A5E3000397CB6 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2BN3AJZW49;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 53FC6DB71E5A5E2F00397CB6;
+					};
+					53FC6DD81E5A5E3000397CB6 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2BN3AJZW49;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 53FC6DB71E5A5E2F00397CB6;
+					};
+				};
+			};
+			buildConfigurationList = 53FC6DB31E5A5E2F00397CB6 /* Build configuration list for PBXProject "PsychonautWiki" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 53FC6DAF1E5A5E2F00397CB6;
+			productRefGroup = 53FC6DB91E5A5E2F00397CB6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53FC6DB71E5A5E2F00397CB6 /* PsychonautWiki */,
+				53FC6DCD1E5A5E3000397CB6 /* PsychonautWikiTests */,
+				53FC6DD81E5A5E3000397CB6 /* PsychonautWikiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53FC6DB61E5A5E2F00397CB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FC6DC81E5A5E3000397CB6 /* LaunchScreen.storyboard in Resources */,
+				53FC6DC51E5A5E3000397CB6 /* Assets.xcassets in Resources */,
+				53FC6DC31E5A5E3000397CB6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FC6DCC1E5A5E3000397CB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FC6DD71E5A5E3000397CB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53FC6DB41E5A5E2F00397CB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FC6DC01E5A5E2F00397CB6 /* DetailViewController.swift in Sources */,
+				53FC6DBE1E5A5E2F00397CB6 /* MasterViewController.swift in Sources */,
+				53FC6DBC1E5A5E2F00397CB6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FC6DCA1E5A5E3000397CB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FC6DD31E5A5E3000397CB6 /* PsychonautWikiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FC6DD51E5A5E3000397CB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FC6DDE1E5A5E3000397CB6 /* PsychonautWikiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53FC6DD01E5A5E3000397CB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53FC6DB71E5A5E2F00397CB6 /* PsychonautWiki */;
+			targetProxy = 53FC6DCF1E5A5E3000397CB6 /* PBXContainerItemProxy */;
+		};
+		53FC6DDB1E5A5E3000397CB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53FC6DB71E5A5E2F00397CB6 /* PsychonautWiki */;
+			targetProxy = 53FC6DDA1E5A5E3000397CB6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		53FC6DC11E5A5E3000397CB6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53FC6DC21E5A5E3000397CB6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		53FC6DC61E5A5E3000397CB6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53FC6DC71E5A5E3000397CB6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		53FC6DE01E5A5E3000397CB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53FC6DE11E5A5E3000397CB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53FC6DE31E5A5E3000397CB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2BN3AJZW49;
+				INFOPLIST_FILE = PsychonautWiki/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.barbewaldemar.PsychonautWiki;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		53FC6DE41E5A5E3000397CB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2BN3AJZW49;
+				INFOPLIST_FILE = PsychonautWiki/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.barbewaldemar.PsychonautWiki;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		53FC6DE61E5A5E3000397CB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2BN3AJZW49;
+				INFOPLIST_FILE = PsychonautWikiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.barbewaldemar.PsychonautWikiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PsychonautWiki.app/PsychonautWiki";
+			};
+			name = Debug;
+		};
+		53FC6DE71E5A5E3000397CB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2BN3AJZW49;
+				INFOPLIST_FILE = PsychonautWikiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.barbewaldemar.PsychonautWikiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PsychonautWiki.app/PsychonautWiki";
+			};
+			name = Release;
+		};
+		53FC6DE91E5A5E3000397CB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 2BN3AJZW49;
+				INFOPLIST_FILE = PsychonautWikiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.barbewaldemar.PsychonautWikiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PsychonautWiki;
+			};
+			name = Debug;
+		};
+		53FC6DEA1E5A5E3000397CB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 2BN3AJZW49;
+				INFOPLIST_FILE = PsychonautWikiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.barbewaldemar.PsychonautWikiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PsychonautWiki;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53FC6DB31E5A5E2F00397CB6 /* Build configuration list for PBXProject "PsychonautWiki" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53FC6DE01E5A5E3000397CB6 /* Debug */,
+				53FC6DE11E5A5E3000397CB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53FC6DE21E5A5E3000397CB6 /* Build configuration list for PBXNativeTarget "PsychonautWiki" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53FC6DE31E5A5E3000397CB6 /* Debug */,
+				53FC6DE41E5A5E3000397CB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		53FC6DE51E5A5E3000397CB6 /* Build configuration list for PBXNativeTarget "PsychonautWikiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53FC6DE61E5A5E3000397CB6 /* Debug */,
+				53FC6DE71E5A5E3000397CB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		53FC6DE81E5A5E3000397CB6 /* Build configuration list for PBXNativeTarget "PsychonautWikiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53FC6DE91E5A5E3000397CB6 /* Debug */,
+				53FC6DEA1E5A5E3000397CB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 53FC6DB01E5A5E2F00397CB6 /* Project object */;
+}
