@@ -1,0 +1,23 @@
+query Substances {
+    substances(limit:250) {
+        name
+        url
+        featured
+        addictionPotential
+        crossTolerance
+        dangerousInteraction
+        class {
+            chemical
+            psychoactive
+        }
+        tolerance {
+            full
+            half
+            zero
+        }
+        effects {
+            name
+            url
+        }
+    }
+}

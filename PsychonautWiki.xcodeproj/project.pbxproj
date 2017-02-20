@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		53FC6DBC1E5A5E2F00397CB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBB1E5A5E2F00397CB6 /* AppDelegate.swift */; };
+		3FF92099497B9CCF597B2974 /* Pods_PsychonautWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18241B68552BF57DE603BAAB /* Pods_PsychonautWiki.framework */; };
+		5305161E1E5A670D00185831 /* Substances.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5305161D1E5A670D00185831 /* Substances.graphql */; };
+		5315F4A81E5A65E9005A051F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315F4A71E5A65E9005A051F /* API.swift */; };
+		5315F4AD1E5A6618005A051F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315F4AC1E5A6618005A051F /* AppDelegate.swift */; };
 		53FC6DBE1E5A5E2F00397CB6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */; };
 		53FC6DC01E5A5E2F00397CB6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBF1E5A5E2F00397CB6 /* DetailViewController.swift */; };
 		53FC6DC31E5A5E3000397CB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FC6DC11E5A5E3000397CB6 /* Main.storyboard */; };
@@ -35,8 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18241B68552BF57DE603BAAB /* Pods_PsychonautWiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PsychonautWiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5305161D1E5A670D00185831 /* Substances.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Substances.graphql; path = Assets/Graphql/Substances.graphql; sourceTree = "<group>"; };
+		5315F4A71E5A65E9005A051F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Classes/Generated/Graphql/API.swift; sourceTree = "<group>"; };
+		5315F4AC1E5A6618005A051F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
 		53FC6DB81E5A5E2F00397CB6 /* PsychonautWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PsychonautWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		53FC6DBB1E5A5E2F00397CB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		53FC6DBF1E5A5E2F00397CB6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		53FC6DC21E5A5E3000397CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +55,8 @@
 		53FC6DD91E5A5E3000397CB6 /* PsychonautWikiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PsychonautWikiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FC6DDD1E5A5E3000397CB6 /* PsychonautWikiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PsychonautWikiUITests.swift; sourceTree = "<group>"; };
 		53FC6DDF1E5A5E3000397CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CC5BDBB6C57136B87349D32 /* Pods-PsychonautWiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PsychonautWiki.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PsychonautWiki/Pods-PsychonautWiki.debug.xcconfig"; sourceTree = "<group>"; };
+		CB4846BE35CDAD25A9A205BB /* Pods-PsychonautWiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PsychonautWiki.release.xcconfig"; path = "Pods/Target Support Files/Pods-PsychonautWiki/Pods-PsychonautWiki.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF92099497B9CCF597B2974 /* Pods_PsychonautWiki.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +85,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5305161B1E5A66C100185831 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5305161C1E5A66D300185831 /* Graphql */,
+				53FC6DC11E5A5E3000397CB6 /* Main.storyboard */,
+				53FC6DC61E5A5E3000397CB6 /* LaunchScreen.storyboard */,
+				53FC6DC41E5A5E3000397CB6 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		5305161C1E5A66D300185831 /* Graphql */ = {
+			isa = PBXGroup;
+			children = (
+				5305161D1E5A670D00185831 /* Substances.graphql */,
+			);
+			name = Graphql;
+			sourceTree = "<group>";
+		};
+		5315F4A91E5A65F3005A051F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5315F4AC1E5A6618005A051F /* AppDelegate.swift */,
+				5315F4AA1E5A65F8005A051F /* Generated */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		5315F4AA1E5A65F8005A051F /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				5315F4AB1E5A65FF005A051F /* Graphql */,
+			);
+			name = Generated;
+			sourceTree = "<group>";
+		};
+		5315F4AB1E5A65FF005A051F /* Graphql */ = {
+			isa = PBXGroup;
+			children = (
+				5315F4A71E5A65E9005A051F /* API.swift */,
+			);
+			name = Graphql;
+			sourceTree = "<group>";
+		};
 		53FC6DAF1E5A5E2F00397CB6 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +136,8 @@
 				53FC6DD11E5A5E3000397CB6 /* PsychonautWikiTests */,
 				53FC6DDC1E5A5E3000397CB6 /* PsychonautWikiUITests */,
 				53FC6DB91E5A5E2F00397CB6 /* Products */,
+				EDEF901B00C9039E0EA06205 /* Pods */,
+				9156FB003DD73F1CDB0A6098 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,12 +154,10 @@
 		53FC6DBA1E5A5E2F00397CB6 /* PsychonautWiki */ = {
 			isa = PBXGroup;
 			children = (
-				53FC6DBB1E5A5E2F00397CB6 /* AppDelegate.swift */,
+				5305161B1E5A66C100185831 /* Assets */,
+				5315F4A91E5A65F3005A051F /* Classes */,
 				53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */,
 				53FC6DBF1E5A5E2F00397CB6 /* DetailViewController.swift */,
-				53FC6DC11E5A5E3000397CB6 /* Main.storyboard */,
-				53FC6DC41E5A5E3000397CB6 /* Assets.xcassets */,
-				53FC6DC61E5A5E3000397CB6 /* LaunchScreen.storyboard */,
 				53FC6DC91E5A5E3000397CB6 /* Info.plist */,
 			);
 			path = PsychonautWiki;
@@ -128,6 +181,23 @@
 			path = PsychonautWikiUITests;
 			sourceTree = "<group>";
 		};
+		9156FB003DD73F1CDB0A6098 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18241B68552BF57DE603BAAB /* Pods_PsychonautWiki.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDEF901B00C9039E0EA06205 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9CC5BDBB6C57136B87349D32 /* Pods-PsychonautWiki.debug.xcconfig */,
+				CB4846BE35CDAD25A9A205BB /* Pods-PsychonautWiki.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +205,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53FC6DE21E5A5E3000397CB6 /* Build configuration list for PBXNativeTarget "PsychonautWiki" */;
 			buildPhases = (
+				E20EED8EE62876990F228416 /* [CP] Check Pods Manifest.lock */,
+				5315F4A41E5A64C8005A051F /* Apollo Codegen */,
 				53FC6DB41E5A5E2F00397CB6 /* Sources */,
 				53FC6DB51E5A5E2F00397CB6 /* Frameworks */,
 				53FC6DB61E5A5E2F00397CB6 /* Resources */,
+				C7A122A866A27021579FB9E3 /* [CP] Embed Pods Frameworks */,
+				E7D192274FE5DD5DF744049C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,6 +314,7 @@
 			files = (
 				53FC6DC81E5A5E3000397CB6 /* LaunchScreen.storyboard in Resources */,
 				53FC6DC51E5A5E3000397CB6 /* Assets.xcassets in Resources */,
+				5305161E1E5A670D00185831 /* Substances.graphql in Resources */,
 				53FC6DC31E5A5E3000397CB6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +335,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5315F4A41E5A64C8005A051F /* Apollo Codegen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Apollo Codegen";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output \"./Classes/Generated/Graphql/API.swift\"";
+		};
+		C7A122A866A27021579FB9E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PsychonautWiki/Pods-PsychonautWiki-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E20EED8EE62876990F228416 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E7D192274FE5DD5DF744049C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PsychonautWiki/Pods-PsychonautWiki-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		53FC6DB41E5A5E2F00397CB6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -267,7 +404,8 @@
 			files = (
 				53FC6DC01E5A5E2F00397CB6 /* DetailViewController.swift in Sources */,
 				53FC6DBE1E5A5E2F00397CB6 /* MasterViewController.swift in Sources */,
-				53FC6DBC1E5A5E2F00397CB6 /* AppDelegate.swift in Sources */,
+				5315F4AD1E5A6618005A051F /* AppDelegate.swift in Sources */,
+				5315F4A81E5A65E9005A051F /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +555,7 @@
 		};
 		53FC6DE31E5A5E3000397CB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CC5BDBB6C57136B87349D32 /* Pods-PsychonautWiki.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2BN3AJZW49;
@@ -430,6 +569,7 @@
 		};
 		53FC6DE41E5A5E3000397CB6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB4846BE35CDAD25A9A205BB /* Pods-PsychonautWiki.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2BN3AJZW49;
@@ -518,6 +658,7 @@
 				53FC6DE41E5A5E3000397CB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		53FC6DE51E5A5E3000397CB6 /* Build configuration list for PBXNativeTarget "PsychonautWikiTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +667,7 @@
 				53FC6DE71E5A5E3000397CB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		53FC6DE81E5A5E3000397CB6 /* Build configuration list for PBXNativeTarget "PsychonautWikiUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +676,7 @@
 				53FC6DEA1E5A5E3000397CB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
