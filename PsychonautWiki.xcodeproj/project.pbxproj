@@ -9,13 +9,19 @@
 /* Begin PBXBuildFile section */
 		3FF92099497B9CCF597B2974 /* Pods_PsychonautWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18241B68552BF57DE603BAAB /* Pods_PsychonautWiki.framework */; };
 		5305161E1E5A670D00185831 /* Substances.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5305161D1E5A670D00185831 /* Substances.graphql */; };
+		530516201E5B6A8600185831 /* SubstancesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5305161F1E5B6A8600185831 /* SubstancesViewController.swift */; };
+		530516251E5B6D1A00185831 /* SubstancesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530516241E5B6D1A00185831 /* SubstancesService.swift */; };
 		5315F4A81E5A65E9005A051F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315F4A71E5A65E9005A051F /* API.swift */; };
 		5315F4AD1E5A6618005A051F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315F4AC1E5A6618005A051F /* AppDelegate.swift */; };
+		533488991E5B968900F8B08A /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533488981E5B968900F8B08A /* UIViewControllerExtensions.swift */; };
+		5334889B1E5B9CC700F8B08A /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5334889A1E5B9CC700F8B08A /* ArrayExtension.swift */; };
+		5334889F1E5BA3D200F8B08A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5334889D1E5BA3D200F8B08A /* LaunchScreen.storyboard */; };
+		533488A01E5BA3D200F8B08A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5334889E1E5BA3D200F8B08A /* Main.storyboard */; };
+		533488A31E5BAB4100F8B08A /* SubstanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533488A21E5BAB4100F8B08A /* SubstanceTableViewCell.swift */; };
+		53664B3A1E5B91490064E730 /* ApolloClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53664B391E5B91490064E730 /* ApolloClient.swift */; };
 		53FC6DBE1E5A5E2F00397CB6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */; };
 		53FC6DC01E5A5E2F00397CB6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBF1E5A5E2F00397CB6 /* DetailViewController.swift */; };
-		53FC6DC31E5A5E3000397CB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FC6DC11E5A5E3000397CB6 /* Main.storyboard */; };
 		53FC6DC51E5A5E3000397CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FC6DC41E5A5E3000397CB6 /* Assets.xcassets */; };
-		53FC6DC81E5A5E3000397CB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FC6DC61E5A5E3000397CB6 /* LaunchScreen.storyboard */; };
 		53FC6DD31E5A5E3000397CB6 /* PsychonautWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DD21E5A5E3000397CB6 /* PsychonautWikiTests.swift */; };
 		53FC6DDE1E5A5E3000397CB6 /* PsychonautWikiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DDD1E5A5E3000397CB6 /* PsychonautWikiUITests.swift */; };
 /* End PBXBuildFile section */
@@ -39,15 +45,21 @@
 
 /* Begin PBXFileReference section */
 		18241B68552BF57DE603BAAB /* Pods_PsychonautWiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PsychonautWiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5305161D1E5A670D00185831 /* Substances.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Substances.graphql; path = Assets/Graphql/Substances.graphql; sourceTree = "<group>"; };
-		5315F4A71E5A65E9005A051F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Classes/Generated/Graphql/API.swift; sourceTree = "<group>"; };
-		5315F4AC1E5A6618005A051F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
+		5305161D1E5A670D00185831 /* Substances.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Substances.graphql; sourceTree = "<group>"; };
+		5305161F1E5B6A8600185831 /* SubstancesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstancesViewController.swift; sourceTree = "<group>"; };
+		530516241E5B6D1A00185831 /* SubstancesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstancesService.swift; sourceTree = "<group>"; };
+		5315F4A71E5A65E9005A051F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		5315F4AC1E5A6618005A051F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		533488981E5B968900F8B08A /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		5334889A1E5B9CC700F8B08A /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		5334889D1E5BA3D200F8B08A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5334889E1E5BA3D200F8B08A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		533488A21E5BAB4100F8B08A /* SubstanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstanceTableViewCell.swift; sourceTree = "<group>"; };
+		53664B391E5B91490064E730 /* ApolloClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApolloClient.swift; sourceTree = "<group>"; };
 		53FC6DB81E5A5E2F00397CB6 /* PsychonautWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PsychonautWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		53FC6DBF1E5A5E2F00397CB6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		53FC6DC21E5A5E3000397CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		53FC6DC41E5A5E3000397CB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		53FC6DC71E5A5E3000397CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53FC6DC91E5A5E3000397CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53FC6DCE1E5A5E3000397CB6 /* PsychonautWikiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PsychonautWikiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FC6DD21E5A5E3000397CB6 /* PsychonautWikiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PsychonautWikiTests.swift; sourceTree = "<group>"; };
@@ -88,12 +100,11 @@
 		5305161B1E5A66C100185831 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				5334889C1E5BA3B200F8B08A /* Storyboards */,
 				5305161C1E5A66D300185831 /* Graphql */,
-				53FC6DC11E5A5E3000397CB6 /* Main.storyboard */,
-				53FC6DC61E5A5E3000397CB6 /* LaunchScreen.storyboard */,
 				53FC6DC41E5A5E3000397CB6 /* Assets.xcassets */,
 			);
-			name = Assets;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		5305161C1E5A66D300185831 /* Graphql */ = {
@@ -101,16 +112,39 @@
 			children = (
 				5305161D1E5A670D00185831 /* Substances.graphql */,
 			);
-			name = Graphql;
+			path = Graphql;
+			sourceTree = "<group>";
+		};
+		530516211E5B6A8C00185831 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */,
+				53FC6DBF1E5A5E2F00397CB6 /* DetailViewController.swift */,
+				5305161F1E5B6A8600185831 /* SubstancesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		530516231E5B6B0F00185831 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				530516241E5B6D1A00185831 /* SubstancesService.swift */,
+				53664B391E5B91490064E730 /* ApolloClient.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		5315F4A91E5A65F3005A051F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				533488A11E5BAB0C00F8B08A /* Cells */,
+				533488971E5B967500F8B08A /* Extensions */,
+				530516211E5B6A8C00185831 /* ViewControllers */,
 				5315F4AC1E5A6618005A051F /* AppDelegate.swift */,
+				530516231E5B6B0F00185831 /* Data */,
 				5315F4AA1E5A65F8005A051F /* Generated */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		5315F4AA1E5A65F8005A051F /* Generated */ = {
@@ -118,7 +152,7 @@
 			children = (
 				5315F4AB1E5A65FF005A051F /* Graphql */,
 			);
-			name = Generated;
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		5315F4AB1E5A65FF005A051F /* Graphql */ = {
@@ -126,7 +160,33 @@
 			children = (
 				5315F4A71E5A65E9005A051F /* API.swift */,
 			);
-			name = Graphql;
+			path = Graphql;
+			sourceTree = "<group>";
+		};
+		533488971E5B967500F8B08A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				533488981E5B968900F8B08A /* UIViewControllerExtensions.swift */,
+				5334889A1E5B9CC700F8B08A /* ArrayExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5334889C1E5BA3B200F8B08A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5334889E1E5BA3D200F8B08A /* Main.storyboard */,
+				5334889D1E5BA3D200F8B08A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		533488A11E5BAB0C00F8B08A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				533488A21E5BAB4100F8B08A /* SubstanceTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		53FC6DAF1E5A5E2F00397CB6 = {
@@ -156,8 +216,6 @@
 			children = (
 				5305161B1E5A66C100185831 /* Assets */,
 				5315F4A91E5A65F3005A051F /* Classes */,
-				53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */,
-				53FC6DBF1E5A5E2F00397CB6 /* DetailViewController.swift */,
 				53FC6DC91E5A5E3000397CB6 /* Info.plist */,
 			);
 			path = PsychonautWiki;
@@ -312,10 +370,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53FC6DC81E5A5E3000397CB6 /* LaunchScreen.storyboard in Resources */,
+				5334889F1E5BA3D200F8B08A /* LaunchScreen.storyboard in Resources */,
 				53FC6DC51E5A5E3000397CB6 /* Assets.xcassets in Resources */,
 				5305161E1E5A670D00185831 /* Substances.graphql in Resources */,
-				53FC6DC31E5A5E3000397CB6 /* Main.storyboard in Resources */,
+				533488A01E5BA3D200F8B08A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,9 +460,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				533488991E5B968900F8B08A /* UIViewControllerExtensions.swift in Sources */,
 				53FC6DC01E5A5E2F00397CB6 /* DetailViewController.swift in Sources */,
 				53FC6DBE1E5A5E2F00397CB6 /* MasterViewController.swift in Sources */,
+				530516201E5B6A8600185831 /* SubstancesViewController.swift in Sources */,
+				53664B3A1E5B91490064E730 /* ApolloClient.swift in Sources */,
 				5315F4AD1E5A6618005A051F /* AppDelegate.swift in Sources */,
+				530516251E5B6D1A00185831 /* SubstancesService.swift in Sources */,
+				5334889B1E5B9CC700F8B08A /* ArrayExtension.swift in Sources */,
+				533488A31E5BAB4100F8B08A /* SubstanceTableViewCell.swift in Sources */,
 				5315F4A81E5A65E9005A051F /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,25 +503,6 @@
 			targetProxy = 53FC6DDA1E5A5E3000397CB6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		53FC6DC11E5A5E3000397CB6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				53FC6DC21E5A5E3000397CB6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		53FC6DC61E5A5E3000397CB6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				53FC6DC71E5A5E3000397CB6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		53FC6DE01E5A5E3000397CB6 /* Debug */ = {
