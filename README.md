@@ -1,4 +1,4 @@
-# iOS PsychonautWiki [![N|Solid](https://psychonautwiki.global.ssl.fastly.net/w/thumb.php?f=Psychonautwiki_hires.png&width=50)]()
+# [![N|Solid](https://psychonautwiki.global.ssl.fastly.net/w/thumb.php?f=Psychonautwiki_hires.png&width=50)]() iOS PsychonautWiki
 
 ## Requirements:
  - Xcode 8
