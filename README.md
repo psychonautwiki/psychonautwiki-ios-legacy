@@ -3,17 +3,17 @@
 ### Requirements:
  - Xcode 8
  - Cocoapods
-```sh
+```
 $ sudo gem install cocoapods
 ```
  - Global node package:  _apollo-codegen_
-```sh
+```
 $ npm install -g apollo-codegen
 ```
 
 ### Installation
 - #### Create workspace
-```sh
+```
 $ cd ios-psychonautwiki
 $ pod repo update
 $ pod install
