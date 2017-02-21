@@ -20,7 +20,7 @@
 		533488A31E5BAB4100F8B08A /* SubstanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533488A21E5BAB4100F8B08A /* SubstanceTableViewCell.swift */; };
 		53664B3A1E5B91490064E730 /* ApolloClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53664B391E5B91490064E730 /* ApolloClient.swift */; };
 		53FC6DBE1E5A5E2F00397CB6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */; };
-		53FC6DC01E5A5E2F00397CB6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBF1E5A5E2F00397CB6 /* DetailViewController.swift */; };
+		53FC6DC01E5A5E2F00397CB6 /* SubstanceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBF1E5A5E2F00397CB6 /* SubstanceDetailViewController.swift */; };
 		53FC6DC51E5A5E3000397CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FC6DC41E5A5E3000397CB6 /* Assets.xcassets */; };
 		53FC6DD31E5A5E3000397CB6 /* PsychonautWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DD21E5A5E3000397CB6 /* PsychonautWikiTests.swift */; };
 		53FC6DDE1E5A5E3000397CB6 /* PsychonautWikiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DDD1E5A5E3000397CB6 /* PsychonautWikiUITests.swift */; };
@@ -58,7 +58,7 @@
 		53664B391E5B91490064E730 /* ApolloClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApolloClient.swift; sourceTree = "<group>"; };
 		53FC6DB81E5A5E2F00397CB6 /* PsychonautWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PsychonautWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		53FC6DBF1E5A5E2F00397CB6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		53FC6DBF1E5A5E2F00397CB6 /* SubstanceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstanceDetailViewController.swift; sourceTree = "<group>"; };
 		53FC6DC41E5A5E3000397CB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53FC6DC91E5A5E3000397CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53FC6DCE1E5A5E3000397CB6 /* PsychonautWikiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PsychonautWikiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +100,7 @@
 		5305161B1E5A66C100185831 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				536FC5761E5CF182005C96FE /* Views */,
 				5334889C1E5BA3B200F8B08A /* Storyboards */,
 				5305161C1E5A66D300185831 /* Graphql */,
 				53FC6DC41E5A5E3000397CB6 /* Assets.xcassets */,
@@ -119,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */,
-				53FC6DBF1E5A5E2F00397CB6 /* DetailViewController.swift */,
+				53FC6DBF1E5A5E2F00397CB6 /* SubstanceDetailViewController.swift */,
 				5305161F1E5B6A8600185831 /* SubstancesViewController.swift */,
 			);
 			path = ViewControllers;
@@ -137,10 +138,10 @@
 		5315F4A91E5A65F3005A051F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5315F4AC1E5A6618005A051F /* AppDelegate.swift */,
 				533488A11E5BAB0C00F8B08A /* Cells */,
 				533488971E5B967500F8B08A /* Extensions */,
 				530516211E5B6A8C00185831 /* ViewControllers */,
-				5315F4AC1E5A6618005A051F /* AppDelegate.swift */,
 				530516231E5B6B0F00185831 /* Data */,
 				5315F4AA1E5A65F8005A051F /* Generated */,
 			);
@@ -187,6 +188,13 @@
 				533488A21E5BAB4100F8B08A /* SubstanceTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		536FC5761E5CF182005C96FE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		53FC6DAF1E5A5E2F00397CB6 = {
@@ -265,11 +273,13 @@
 			buildPhases = (
 				E20EED8EE62876990F228416 /* [CP] Check Pods Manifest.lock */,
 				5315F4A41E5A64C8005A051F /* Apollo Codegen */,
+				536FC5751E5CD7C6005C96FE /* Build Version Increment */,
 				53FC6DB41E5A5E2F00397CB6 /* Sources */,
 				53FC6DB51E5A5E2F00397CB6 /* Frameworks */,
 				53FC6DB61E5A5E2F00397CB6 /* Resources */,
 				C7A122A866A27021579FB9E3 /* [CP] Embed Pods Frameworks */,
 				E7D192274FE5DD5DF744049C /* [CP] Copy Pods Resources */,
+				536FC5741E5CD05C005C96FE /* Hockey */,
 			);
 			buildRules = (
 			);
@@ -328,7 +338,7 @@
 				TargetAttributes = {
 					53FC6DB71E5A5E2F00397CB6 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 2BN3AJZW49;
+						DevelopmentTeam = RY3UPR7VXC;
 						ProvisioningStyle = Automatic;
 					};
 					53FC6DCD1E5A5E3000397CB6 = {
@@ -408,6 +418,34 @@
 			shellPath = /bin/sh;
 			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output \"./Classes/Generated/Graphql/API.swift\"";
 		};
+		536FC5741E5CD05C005C96FE /* Hockey */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Hockey;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
+		};
+		536FC5751E5CD7C6005C96FE /* Build Version Increment */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Version Increment";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
 		C7A122A866A27021579FB9E3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -461,7 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				533488991E5B968900F8B08A /* UIViewControllerExtensions.swift in Sources */,
-				53FC6DC01E5A5E2F00397CB6 /* DetailViewController.swift in Sources */,
+				53FC6DC01E5A5E2F00397CB6 /* SubstanceDetailViewController.swift in Sources */,
 				53FC6DBE1E5A5E2F00397CB6 /* MasterViewController.swift in Sources */,
 				530516201E5B6A8600185831 /* SubstancesViewController.swift in Sources */,
 				53664B3A1E5B91490064E730 /* ApolloClient.swift in Sources */,
@@ -603,8 +641,9 @@
 			baseConfigurationReference = 9CC5BDBB6C57136B87349D32 /* Pods-PsychonautWiki.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2BN3AJZW49;
+				DEVELOPMENT_TEAM = RY3UPR7VXC;
 				INFOPLIST_FILE = PsychonautWiki/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.barbewaldemar.PsychonautWiki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -617,8 +656,9 @@
 			baseConfigurationReference = CB4846BE35CDAD25A9A205BB /* Pods-PsychonautWiki.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2BN3AJZW49;
+				DEVELOPMENT_TEAM = RY3UPR7VXC;
 				INFOPLIST_FILE = PsychonautWiki/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.barbewaldemar.PsychonautWiki;
 				PRODUCT_NAME = "$(TARGET_NAME)";

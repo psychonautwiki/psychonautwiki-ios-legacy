@@ -12,10 +12,38 @@ import Apollo
 class SubstancesViewController: UITableViewController {
 
     var watcher: GraphQLQueryWatcher<SubstancesQuery>?
-    var substances: [SubstancesQuery.Data.Substance]? {
+    
+    var rawSubstances: [SubstancesQuery.Data.Substance]? {
         didSet {
-            self.tableView.reloadData()
+            if let rawSubstances = rawSubstances {
+                self.substancesDictionary = self.calculateSubstancesDictionary(substances: rawSubstances)
+            } else {
+                self.substancesDictionary = nil
+            }
+            tableView.reloadData()
         }
+    }
+    
+    typealias SubstancesDictionary = [String : [SubstancesQuery.Data.Substance]]
+    var substancesDictionary: SubstancesDictionary?
+    
+    func calculateSubstancesDictionary(substances: [SubstancesQuery.Data.Substance]) -> SubstancesDictionary {
+        var resultDictionary = SubstancesDictionary()
+        for substance in substances {
+            guard let substanceClass = substance.class,
+                let psychoactiveClasses = substanceClass.psychoactive else { continue }
+            for psychoactiveClass in psychoactiveClasses {
+                if let psychoactiveClass = psychoactiveClass {
+                    if var existingSubstances = resultDictionary[psychoactiveClass] {
+                        existingSubstances.append(substance)
+                        resultDictionary[psychoactiveClass] = existingSubstances
+                    } else {
+                        resultDictionary[psychoactiveClass] = [substance]
+                    }
+                }
+            }
+        }
+        return resultDictionary
     }
     
     override func viewDidLoad() {
@@ -67,32 +95,43 @@ class SubstancesViewController: UITableViewController {
             return
         }
         
-        self.substances = substances.flatMap { $0 }
-        NSLog("Got \(self.substances?.count ?? 0) substances")
+        self.rawSubstances = substances.flatMap { $0 }
+        NSLog("Got \(self.rawSubstances?.count ?? 0) substances")
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if self.substances.isNil() {
+        guard let substancesDictionary = self.substancesDictionary else {
             let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
             self.tableView.backgroundView = activityIndicator
             activityIndicator.startAnimating()
             return 0
-        } else {
-            self.tableView.backgroundView = nil
-            return 1
         }
+        
+        self.tableView.backgroundView = nil
+        return substancesDictionary.keys.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.substances?.count ?? 0
+        guard let substancesDictionary = self.substancesDictionary else { return 0 }
+        
+        let key = Array(substancesDictionary.keys).sorted()[section]
+        return substancesDictionary[key]?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let substancesDictionary = self.substancesDictionary else { return nil }
+        return Array(substancesDictionary.keys).sorted()[section]
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubstanceCell", for: indexPath)
-
-        if let substance = self.substances?.element(atIndex: indexPath.row) {
+        
+        guard let substancesDictionary = self.substancesDictionary else { return cell }
+        let key = Array(substancesDictionary.keys).sorted()[indexPath.section]
+        
+        if let substance = substancesDictionary[key]?.element(atIndex: indexPath.row) {
             cell.textLabel?.text = substance.name ?? "- no name -"
             if let addictionPotential = substance.addictionPotential {
                 cell.detailTextLabel?.text = "Addiction potential:\n\(addictionPotential)"
