@@ -17,7 +17,7 @@
 		5334889B1E5B9CC700F8B08A /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5334889A1E5B9CC700F8B08A /* ArrayExtension.swift */; };
 		5334889F1E5BA3D200F8B08A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5334889D1E5BA3D200F8B08A /* LaunchScreen.storyboard */; };
 		533488A01E5BA3D200F8B08A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5334889E1E5BA3D200F8B08A /* Main.storyboard */; };
-		533488A31E5BAB4100F8B08A /* SubstanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533488A21E5BAB4100F8B08A /* SubstanceTableViewCell.swift */; };
+		533488A31E5BAB4100F8B08A /* MultiLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533488A21E5BAB4100F8B08A /* MultiLineTableViewCell.swift */; };
 		53664B3A1E5B91490064E730 /* ApolloClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53664B391E5B91490064E730 /* ApolloClient.swift */; };
 		53FC6DBE1E5A5E2F00397CB6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */; };
 		53FC6DC01E5A5E2F00397CB6 /* SubstanceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBF1E5A5E2F00397CB6 /* SubstanceDetailViewController.swift */; };
@@ -54,7 +54,7 @@
 		5334889A1E5B9CC700F8B08A /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		5334889D1E5BA3D200F8B08A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5334889E1E5BA3D200F8B08A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		533488A21E5BAB4100F8B08A /* SubstanceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstanceTableViewCell.swift; sourceTree = "<group>"; };
+		533488A21E5BAB4100F8B08A /* MultiLineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiLineTableViewCell.swift; sourceTree = "<group>"; };
 		53664B391E5B91490064E730 /* ApolloClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApolloClient.swift; sourceTree = "<group>"; };
 		53FC6DB81E5A5E2F00397CB6 /* PsychonautWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PsychonautWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		533488A11E5BAB0C00F8B08A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				533488A21E5BAB4100F8B08A /* SubstanceTableViewCell.swift */,
+				533488A21E5BAB4100F8B08A /* MultiLineTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -506,7 +506,7 @@
 				5315F4AD1E5A6618005A051F /* AppDelegate.swift in Sources */,
 				530516251E5B6D1A00185831 /* SubstancesService.swift in Sources */,
 				5334889B1E5B9CC700F8B08A /* ArrayExtension.swift in Sources */,
-				533488A31E5BAB4100F8B08A /* SubstanceTableViewCell.swift in Sources */,
+				533488A31E5BAB4100F8B08A /* MultiLineTableViewCell.swift in Sources */,
 				5315F4A81E5A65E9005A051F /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

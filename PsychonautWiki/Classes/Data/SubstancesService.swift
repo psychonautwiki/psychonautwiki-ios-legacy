@@ -9,6 +9,8 @@
 import Foundation
 import Apollo
 
+typealias Substance = SubstancesQuery.Data.Substance
+
 class SubstancesService {
     
     typealias SubstancesResultHandler = (GraphQLResult<SubstancesQuery.Data>?, Error?) -> ()

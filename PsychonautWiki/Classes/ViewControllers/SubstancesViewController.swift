@@ -13,7 +13,7 @@ class SubstancesViewController: UITableViewController {
 
     var watcher: GraphQLQueryWatcher<SubstancesQuery>?
     
-    var rawSubstances: [SubstancesQuery.Data.Substance]? {
+    var rawSubstances: [Substance]? {
         didSet {
             if let rawSubstances = rawSubstances {
                 self.substancesDictionary = self.calculateSubstancesDictionary(substances: rawSubstances)
@@ -24,10 +24,10 @@ class SubstancesViewController: UITableViewController {
         }
     }
     
-    typealias SubstancesDictionary = [String : [SubstancesQuery.Data.Substance]]
+    typealias SubstancesDictionary = [String : [Substance]]
     var substancesDictionary: SubstancesDictionary?
     
-    func calculateSubstancesDictionary(substances: [SubstancesQuery.Data.Substance]) -> SubstancesDictionary {
+    func calculateSubstancesDictionary(substances: [Substance]) -> SubstancesDictionary {
         var resultDictionary = SubstancesDictionary()
         for substance in substances {
             guard let substanceClass = substance.class,
@@ -99,6 +99,27 @@ class SubstancesViewController: UITableViewController {
         NSLog("Got \(self.rawSubstances?.count ?? 0) substances")
     }
     
+    func substanceFor(indexPath: IndexPath) -> Substance? {
+        guard let substancesDictionary = self.substancesDictionary else { return nil }
+        let key = Array(substancesDictionary.keys).sorted()[indexPath.section]
+        
+        return substancesDictionary[key]?.element(atIndex: indexPath.row)
+    }
+    
+    // MARK: - Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                guard let substance = self.substanceFor(indexPath: indexPath) else { return }
+                let controller = (segue.destination as! UINavigationController).topViewController as! SubstanceDetailViewController
+                controller.substance = substance
+                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -127,22 +148,16 @@ class SubstancesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubstanceCell", for: indexPath)
+        guard let substance = self.substanceFor(indexPath: indexPath) else { return cell }
         
-        guard let substancesDictionary = self.substancesDictionary else { return cell }
-        let key = Array(substancesDictionary.keys).sorted()[indexPath.section]
-        
-        if let substance = substancesDictionary[key]?.element(atIndex: indexPath.row) {
-            cell.textLabel?.text = substance.name ?? "- no name -"
-            if let addictionPotential = substance.addictionPotential {
-                cell.detailTextLabel?.text = "Addiction potential:\n\(addictionPotential)"
-            } else {
-                cell.detailTextLabel?.text = "No information about addictive potential."
-            }
-            cell.detailTextLabel?.numberOfLines = 0
-            cell.detailTextLabel?.lineBreakMode = .byTruncatingTail
+        cell.textLabel?.text = substance.name ?? "- no name -"
+        if let addictionPotential = substance.addictionPotential {
+            cell.detailTextLabel?.text = "Addiction potential:\n\(addictionPotential)"
         } else {
-            NSLog("Could not get a subtance for row: \(indexPath.row)")
+            cell.detailTextLabel?.text = "No information about addictive potential."
         }
+        cell.detailTextLabel?.numberOfLines = 0
+        cell.detailTextLabel?.lineBreakMode = .byTruncatingTail
 
         return cell
     }

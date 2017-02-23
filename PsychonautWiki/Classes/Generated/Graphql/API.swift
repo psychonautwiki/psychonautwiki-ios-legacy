@@ -12,7 +12,10 @@ public final class SubstancesQuery: GraphQLQuery {
     "    featured" +
     "    addictionPotential" +
     "    crossTolerance" +
-    "    dangerousInteraction" +
+    "    dangerousInteraction {" +
+    "      __typename" +
+    "      name" +
+    "    }" +
     "    class {" +
     "      __typename" +
     "      chemical" +
@@ -48,7 +51,7 @@ public final class SubstancesQuery: GraphQLQuery {
       public let featured: Bool?
       public let addictionPotential: String?
       public let crossTolerance: [String?]?
-      public let dangerousInteraction: [String?]?
+      public let dangerousInteraction: [DangerousInteraction?]?
       public let `class`: Class?
       public let tolerance: Tolerance?
       public let effects: [Effect?]?
@@ -64,6 +67,16 @@ public final class SubstancesQuery: GraphQLQuery {
         `class` = try reader.optionalValue(for: Field(responseName: "class"))
         tolerance = try reader.optionalValue(for: Field(responseName: "tolerance"))
         effects = try reader.optionalList(for: Field(responseName: "effects"))
+      }
+
+      public struct DangerousInteraction: GraphQLMappable {
+        public let __typename: String
+        public let name: String?
+
+        public init(reader: GraphQLResultReader) throws {
+          __typename = try reader.value(for: Field(responseName: "__typename"))
+          name = try reader.optionalValue(for: Field(responseName: "name"))
+        }
       }
 
       public struct Class: GraphQLMappable {

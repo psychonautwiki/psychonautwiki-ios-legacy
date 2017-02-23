@@ -8,11 +8,16 @@
 
 import UIKit
 
-class SubstanceTableViewCell: UITableViewCell {
+class MultiLineTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.textLabel?.numberOfLines = 0
+        self.textLabel?.lineBreakMode = .byTruncatingTail
+        self.detailTextLabel?.numberOfLines = 0
+        self.detailTextLabel?.lineBreakMode = .byTruncatingTail
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

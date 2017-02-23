@@ -5,7 +5,9 @@ query Substances {
         featured
         addictionPotential
         crossTolerance
-        dangerousInteraction
+        dangerousInteraction {
+            name
+        }
         class {
             chemical
             psychoactive
