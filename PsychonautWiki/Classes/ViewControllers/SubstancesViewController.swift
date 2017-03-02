@@ -55,6 +55,7 @@ class SubstancesViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        Tracker.Screens.substancesList.track()
         super.viewWillAppear(animated)
     }
     

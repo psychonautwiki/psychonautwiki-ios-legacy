@@ -18,7 +18,10 @@
 		5334889F1E5BA3D200F8B08A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5334889D1E5BA3D200F8B08A /* LaunchScreen.storyboard */; };
 		533488A01E5BA3D200F8B08A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5334889E1E5BA3D200F8B08A /* Main.storyboard */; };
 		533488A31E5BAB4100F8B08A /* MultiLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533488A21E5BAB4100F8B08A /* MultiLineTableViewCell.swift */; };
+		5364D09A1E645A2D00B1F741 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5364D0991E645A2D00B1F741 /* GoogleService-Info.plist */; };
 		53664B3A1E5B91490064E730 /* ApolloClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53664B391E5B91490064E730 /* ApolloClient.swift */; };
+		53D63A991E6897D80065F05D /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D63A981E6897D80065F05D /* Tracker.swift */; };
+		53D63A9B1E6899110065F05D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D63A9A1E6899110065F05D /* Logger.swift */; };
 		53FC6DBE1E5A5E2F00397CB6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */; };
 		53FC6DC01E5A5E2F00397CB6 /* SubstanceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBF1E5A5E2F00397CB6 /* SubstanceDetailViewController.swift */; };
 		53FC6DC51E5A5E3000397CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FC6DC41E5A5E3000397CB6 /* Assets.xcassets */; };
@@ -55,7 +58,11 @@
 		5334889D1E5BA3D200F8B08A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5334889E1E5BA3D200F8B08A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		533488A21E5BAB4100F8B08A /* MultiLineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiLineTableViewCell.swift; sourceTree = "<group>"; };
+		5364D0991E645A2D00B1F741 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		53664B391E5B91490064E730 /* ApolloClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApolloClient.swift; sourceTree = "<group>"; };
+		53D63A961E6896890065F05D /* PsychonautWiki-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PsychonautWiki-Bridging-Header.h"; sourceTree = "<group>"; };
+		53D63A981E6897D80065F05D /* Tracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
+		53D63A9A1E6899110065F05D /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		53FC6DB81E5A5E2F00397CB6 /* PsychonautWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PsychonautWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		53FC6DBF1E5A5E2F00397CB6 /* SubstanceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstanceDetailViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +138,8 @@
 			children = (
 				530516241E5B6D1A00185831 /* SubstancesService.swift */,
 				53664B391E5B91490064E730 /* ApolloClient.swift */,
+				53D63A981E6897D80065F05D /* Tracker.swift */,
+				53D63A9A1E6899110065F05D /* Logger.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -190,6 +199,17 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		5364D0981E64542900B1F741 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5364D0991E645A2D00B1F741 /* GoogleService-Info.plist */,
+				53FC6DC91E5A5E3000397CB6 /* Info.plist */,
+				53D63A961E6896890065F05D /* PsychonautWiki-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		536FC5761E5CF182005C96FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,7 +244,7 @@
 			children = (
 				5305161B1E5A66C100185831 /* Assets */,
 				5315F4A91E5A65F3005A051F /* Classes */,
-				53FC6DC91E5A5E3000397CB6 /* Info.plist */,
+				5364D0981E64542900B1F741 /* Supporting Files */,
 			);
 			path = PsychonautWiki;
 			sourceTree = "<group>";
@@ -280,6 +300,7 @@
 				C7A122A866A27021579FB9E3 /* [CP] Embed Pods Frameworks */,
 				E7D192274FE5DD5DF744049C /* [CP] Copy Pods Resources */,
 				536FC5741E5CD05C005C96FE /* Hockey */,
+				5364D0971E64533300B1F741 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -333,7 +354,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Waldemar Barbe";
 				TargetAttributes = {
 					53FC6DB71E5A5E2F00397CB6 = {
@@ -382,6 +403,7 @@
 			files = (
 				5334889F1E5BA3D200F8B08A /* LaunchScreen.storyboard in Resources */,
 				53FC6DC51E5A5E3000397CB6 /* Assets.xcassets in Resources */,
+				5364D09A1E645A2D00B1F741 /* GoogleService-Info.plist in Resources */,
 				5305161E1E5A670D00185831 /* Substances.graphql in Resources */,
 				533488A01E5BA3D200F8B08A /* Main.storyboard in Resources */,
 			);
@@ -417,6 +439,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output \"./Classes/Generated/Graphql/API.swift\"";
+		};
+		5364D0971E64533300B1F741 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 258874f0db46901c5f2a95ca23c8a5006a4d11f6 968404e8deea140e8edec029f6c98ea01466fe7400432bf4166be2a12d1c46dd";
 		};
 		536FC5741E5CD05C005C96FE /* Hockey */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -504,6 +540,8 @@
 				530516201E5B6A8600185831 /* SubstancesViewController.swift in Sources */,
 				53664B3A1E5B91490064E730 /* ApolloClient.swift in Sources */,
 				5315F4AD1E5A6618005A051F /* AppDelegate.swift in Sources */,
+				53D63A991E6897D80065F05D /* Tracker.swift in Sources */,
+				53D63A9B1E6899110065F05D /* Logger.swift in Sources */,
 				530516251E5B6D1A00185831 /* SubstancesService.swift in Sources */,
 				5334889B1E5B9CC700F8B08A /* ArrayExtension.swift in Sources */,
 				533488A31E5BAB4100F8B08A /* MultiLineTableViewCell.swift in Sources */,
@@ -561,6 +599,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -611,6 +650,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -640,13 +680,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9CC5BDBB6C57136B87349D32 /* Pods-PsychonautWiki.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RY3UPR7VXC;
-				INFOPLIST_FILE = PsychonautWiki/Info.plist;
+				INFOPLIST_FILE = PsychonautWiki/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.barbewaldemar.PsychonautWiki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PsychonautWiki/SupportingFiles/PsychonautWiki-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -655,13 +697,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CB4846BE35CDAD25A9A205BB /* Pods-PsychonautWiki.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RY3UPR7VXC;
-				INFOPLIST_FILE = PsychonautWiki/Info.plist;
+				INFOPLIST_FILE = PsychonautWiki/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.barbewaldemar.PsychonautWiki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PsychonautWiki/SupportingFiles/PsychonautWiki-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
