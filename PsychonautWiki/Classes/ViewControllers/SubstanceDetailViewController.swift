@@ -74,6 +74,28 @@ class SubstanceDetailViewController: UITableViewController {
             return super.tableView(tableView, numberOfRowsInSection: section)
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let section = Sections(rawValue: indexPath.section) else { return }
+    	
+        switch section {
+        case .links:
+            guard let urlString = self.substance?.url else { return }
+            self.open(urlString: urlString)
+        case .effects:
+            guard let effects = substance?.effects,
+                effects.count > indexPath.row,
+                let effect = effects[indexPath.row],
+            	let urlString = effect.url else { return }
+            
+            self.open(urlString: urlString)
+        default:
+            break
+        }
+        
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = {
@@ -85,9 +107,15 @@ class SubstanceDetailViewController: UITableViewController {
         }()
         guard let section = Sections(rawValue: indexPath.section) else { return cell }
         
+        cell.selectionStyle = .none
+        cell.accessoryType = .none
+        
         switch section {
             case .links:
-                cell.textLabel?.text = substance?.url ?? "Unknown"
+                let linkAvailable = substance?.url != nil
+                cell.textLabel?.text = linkAvailable ? "Wiki page" : "Unkown"
+                cell.accessoryType = linkAvailable ? .disclosureIndicator : .none
+                cell.selectionStyle = linkAvailable ? .default : .none
             case .addicationPotential:
                 cell.textLabel?.text = substance?.addictionPotential ?? "Unknown"
             case .crossTolerance:
@@ -129,10 +157,13 @@ class SubstanceDetailViewController: UITableViewController {
                     effects.count > indexPath.row,
                     let effect = effects[indexPath.row] {
                     cell.textLabel?.text = effect.name ?? "Unknown"
+                    
+                    let linkAvailable = effect.url != nil
+                    cell.selectionStyle = linkAvailable ? .default : .none
+                    cell.accessoryType =  linkAvailable ? .disclosureIndicator : .none
                 } else {
                     cell.textLabel?.text = "Unknown"
-            	}
-            	cell.accessoryType = .disclosureIndicator
+                }
         }
         
         return cell

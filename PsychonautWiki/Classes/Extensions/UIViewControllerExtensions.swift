@@ -16,6 +16,14 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func open(urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        let viewController = UIViewController()
+        let webview = UIWebView()
+        webview.loadRequest(URLRequest(url: url))
+        viewController.view = webview
+        self.show(viewController, sender: self)
+    }
 }
 
 extension Optional {
