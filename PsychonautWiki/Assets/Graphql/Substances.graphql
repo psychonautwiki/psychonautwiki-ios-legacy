@@ -1,11 +1,16 @@
 query Substances {
-    substances(limit:250) {
+    substances(limit:300) {
         name
         url
         featured
         addictionPotential
-        crossTolerance
-        dangerousInteraction {
+        crossTolerances
+        summary
+        images {
+            thumb
+            image
+        }
+        dangerousInteractions {
             name
         }
         class {

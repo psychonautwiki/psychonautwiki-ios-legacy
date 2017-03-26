@@ -5,14 +5,20 @@ import Apollo
 public final class SubstancesQuery: GraphQLQuery {
   public static let operationDefinition =
     "query Substances {" +
-    "  substances(limit: 250) {" +
+    "  substances(limit: 300) {" +
     "    __typename" +
     "    name" +
     "    url" +
     "    featured" +
     "    addictionPotential" +
-    "    crossTolerance" +
-    "    dangerousInteraction {" +
+    "    crossTolerances" +
+    "    summary" +
+    "    images {" +
+    "      __typename" +
+    "      thumb" +
+    "      image" +
+    "    }" +
+    "    dangerousInteractions {" +
     "      __typename" +
     "      name" +
     "    }" +
@@ -41,7 +47,7 @@ public final class SubstancesQuery: GraphQLQuery {
     public let substances: [Substance?]?
 
     public init(reader: GraphQLResultReader) throws {
-      substances = try reader.optionalList(for: Field(responseName: "substances", arguments: ["limit": 250]))
+      substances = try reader.optionalList(for: Field(responseName: "substances", arguments: ["limit": 300]))
     }
 
     public struct Substance: GraphQLMappable {
@@ -50,8 +56,10 @@ public final class SubstancesQuery: GraphQLQuery {
       public let url: String?
       public let featured: Bool?
       public let addictionPotential: String?
-      public let crossTolerance: [String?]?
-      public let dangerousInteraction: [DangerousInteraction?]?
+      public let crossTolerances: [String?]?
+      public let summary: String?
+      public let images: [Image?]?
+      public let dangerousInteractions: [DangerousInteraction?]?
       public let `class`: Class?
       public let tolerance: Tolerance?
       public let effects: [Effect?]?
@@ -62,11 +70,25 @@ public final class SubstancesQuery: GraphQLQuery {
         url = try reader.optionalValue(for: Field(responseName: "url"))
         featured = try reader.optionalValue(for: Field(responseName: "featured"))
         addictionPotential = try reader.optionalValue(for: Field(responseName: "addictionPotential"))
-        crossTolerance = try reader.optionalList(for: Field(responseName: "crossTolerance"))
-        dangerousInteraction = try reader.optionalList(for: Field(responseName: "dangerousInteraction"))
+        crossTolerances = try reader.optionalList(for: Field(responseName: "crossTolerances"))
+        summary = try reader.optionalValue(for: Field(responseName: "summary"))
+        images = try reader.optionalList(for: Field(responseName: "images"))
+        dangerousInteractions = try reader.optionalList(for: Field(responseName: "dangerousInteractions"))
         `class` = try reader.optionalValue(for: Field(responseName: "class"))
         tolerance = try reader.optionalValue(for: Field(responseName: "tolerance"))
         effects = try reader.optionalList(for: Field(responseName: "effects"))
+      }
+
+      public struct Image: GraphQLMappable {
+        public let __typename: String
+        public let thumb: String?
+        public let image: String?
+
+        public init(reader: GraphQLResultReader) throws {
+          __typename = try reader.value(for: Field(responseName: "__typename"))
+          thumb = try reader.optionalValue(for: Field(responseName: "thumb"))
+          image = try reader.optionalValue(for: Field(responseName: "image"))
+        }
       }
 
       public struct DangerousInteraction: GraphQLMappable {

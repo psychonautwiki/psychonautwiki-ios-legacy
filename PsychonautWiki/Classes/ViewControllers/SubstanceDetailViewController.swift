@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import AlamofireImage
+import AutoLayoutHelperSwift
 
 class SubstanceDetailViewController: UITableViewController {
-
+    
+    var tableHeaderView: UIView?
+    var tableHeaderImageWebView: UIWebView?
+    
     enum Sections: Int {
         case links = 0
         case addicationPotential
@@ -29,6 +34,42 @@ class SubstanceDetailViewController: UITableViewController {
     func configureView() {
         guard let substance = substance else { return }
         self.navigationItem.title = substance.name
+        
+        guard let substanceImages = substance.images else { 
+            Logger.logWarn("Could not unwrap substance.images")
+            return 
+        }
+        guard let firstImage = substanceImages.element(atIndex: 0) else { 
+            Logger.logWarn("Could not unwrap substanceImages.element(atIndex: 0)")
+            return 
+        }
+        guard let imageUrlString = firstImage?.image else { 
+            Logger.logWarn("Could not unwrap firstImage?.image")
+            return 
+        }
+        guard let imageUrl = URL(string: imageUrlString) else { 
+            Logger.logWarn("Could not unwrap URL(string: imageUrlString)")
+            return 
+        }
+        
+        if self.tableHeaderView == nil {
+            self.tableHeaderView = UIView()
+            self.tableHeaderImageWebView = UIWebView()
+            
+            self.tableHeaderView?.addSubview(tableHeaderImageWebView!)
+            
+            let edgeInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+            self.tableHeaderImageWebView?.fillSuperView(edgeInset)
+            self.tableHeaderImageWebView?.contentMode = .scaleAspectFit
+            self.tableHeaderImageWebView?.backgroundColor = UIColor.white
+            self.tableHeaderImageWebView?.layer.borderWidth = 1
+            self.tableHeaderImageWebView?.layer.borderColor = UIColor.darkGray.cgColor
+            
+            self.tableView.tableHeaderView = self.tableHeaderView
+            self.tableView.tableHeaderView?.frame.size.height = 250
+        }
+        
+        self.tableHeaderImageWebView?.loadRequest(URLRequest(url: imageUrl))
     }
 
     override func viewDidLoad() {
@@ -119,13 +160,13 @@ class SubstanceDetailViewController: UITableViewController {
             case .addicationPotential:
                 cell.textLabel?.text = substance?.addictionPotential ?? "Unknown"
             case .crossTolerance:
-                if let crossTolerance = substance?.crossTolerance {
+                if let crossTolerance = substance?.crossTolerances {
                     cell.textLabel?.text = crossTolerance.flatMap({ $0 }).joined(separator: "\n")
                 } else {
                     cell.textLabel?.text = "Unknown"
                 }
             case .dangerousInteraction:
-                if let dangerousInteraction = substance?.dangerousInteraction {
+                if let dangerousInteraction = substance?.dangerousInteractions {
                     cell.textLabel?.text = dangerousInteraction.flatMap({ $0?.name }).joined(separator: "\n")
                 } else {
                     cell.textLabel?.text = "Unknown"

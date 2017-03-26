@@ -299,6 +299,34 @@
               "deprecationReason": null
             },
             {
+              "name": "summary",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "images",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "SubstanceImage",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "addictionPotential",
               "description": "",
               "args": [],
@@ -311,7 +339,7 @@
               "deprecationReason": null
             },
             {
-              "name": "crossTolerance",
+              "name": "crossTolerances",
               "description": "",
               "args": [],
               "type": {
@@ -327,7 +355,7 @@
               "deprecationReason": null
             },
             {
-              "name": "dangerousInteraction",
+              "name": "dangerousInteractions",
               "description": "",
               "args": [],
               "type": {
@@ -1061,6 +1089,41 @@
               "ofType": null
             }
           ],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "SubstanceImage",
+          "description": "",
+          "fields": [
+            {
+              "name": "thumb",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "image",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
           "enumValues": null,
           "possibleTypes": null
         },
