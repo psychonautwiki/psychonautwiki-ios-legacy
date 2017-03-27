@@ -9,9 +9,12 @@
 import UIKit
 import Apollo
 
-class SubstancesViewController: UITableViewController {
+class SubstancesViewController: UITableViewController, UISearchResultsUpdating {
 
     var watcher: GraphQLQueryWatcher<SubstancesQuery>?
+    var searchController: UISearchController?
+    
+    var filteredSubstancesDictionary: SubstancesDictionary?
     
     var rawSubstances: [Substance]? {
         didSet {
@@ -48,10 +51,22 @@ class SubstancesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureSearchBar()
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 60
         
         watcher = SubstancesService.createWatcher(resultHandler: self.substancesResultHandler)
+    }
+    
+    func configureSearchBar() {
+        let searchController = UISearchController(searchResultsController: nil)
+        self.searchController = searchController
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        self.definesPresentationContext = true
+        
+        self.tableView.tableHeaderView = searchController.searchBar
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,9 +117,46 @@ class SubstancesViewController: UITableViewController {
     
     func substanceFor(indexPath: IndexPath) -> Substance? {
         guard let substancesDictionary = self.substancesDictionary else { return nil }
-        let key = Array(substancesDictionary.keys).sorted()[indexPath.section]
         
+        if let searchController = self.searchController,
+            searchController.isActive && searchController.searchBar.text != "",
+            let filteredSubstancesDictionary = self.filteredSubstancesDictionary {
+            let key = Array(filteredSubstancesDictionary.keys).sorted()[indexPath.section]
+            return filteredSubstancesDictionary[key]?.element(atIndex: indexPath.row)
+        }
+        
+        let key = Array(substancesDictionary.keys).sorted()[indexPath.section]
         return substancesDictionary[key]?.element(atIndex: indexPath.row)
+    }
+    
+    func filterSubstancesDictionary(searchText: String) {
+        guard let substancesDictionary = self.substancesDictionary else {
+        	self.filteredSubstancesDictionary = nil
+            return
+        }
+        
+        self.filteredSubstancesDictionary = substancesDictionary.reduce(SubstancesDictionary(), { dict, pair in
+            let filteredSubstances = pair.value.filter { substance in
+                guard let name = substance.name else { return false }
+                return name.containsFuzzy(searchText)
+            }
+            if filteredSubstances.count > 0 {
+                var newDict = dict
+                newDict[pair.key] = filteredSubstances
+                return newDict
+            }
+            return dict
+        })
+        
+        tableView.reloadData()
+    }
+    
+    // MARK: - Search Result Updater
+    
+    
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        self.filterSubstancesDictionary(searchText: searchController.searchBar.text!)
     }
     
     // MARK: - Segues
@@ -130,13 +182,26 @@ class SubstancesViewController: UITableViewController {
             activityIndicator.startAnimating()
             return 0
         }
-        
         self.tableView.backgroundView = nil
+        
+        if let searchController = self.searchController,
+           searchController.isActive && searchController.searchBar.text != "",
+           let filteredSubstancesDictionary = self.filteredSubstancesDictionary {
+            return filteredSubstancesDictionary.keys.count
+        }
+        
         return substancesDictionary.keys.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let substancesDictionary = self.substancesDictionary else { return 0 }
+        
+        if let searchController = self.searchController,
+            searchController.isActive && searchController.searchBar.text != "",
+            let filteredSubstancesDictionary = self.filteredSubstancesDictionary {
+            let key = Array(filteredSubstancesDictionary.keys).sorted()[section]
+            return filteredSubstancesDictionary[key]?.count ?? 0
+        }
         
         let key = Array(substancesDictionary.keys).sorted()[section]
         return substancesDictionary[key]?.count ?? 0
@@ -144,6 +209,13 @@ class SubstancesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let substancesDictionary = self.substancesDictionary else { return nil }
+        
+        if let searchController = self.searchController,
+            searchController.isActive && searchController.searchBar.text != "",
+            let filteredSubstancesDictionary = self.filteredSubstancesDictionary {
+            return Array(filteredSubstancesDictionary.keys).sorted()[section]
+        }
+        
         return Array(substancesDictionary.keys).sorted()[section]
     }
     

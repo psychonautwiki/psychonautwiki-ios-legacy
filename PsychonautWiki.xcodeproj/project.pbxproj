@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28F1D711E5EDF1CA73B92111 /* Pods_PsychonautWikiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3248F5777F855AADE50B67A /* Pods_PsychonautWikiTests.framework */; };
 		3FF92099497B9CCF597B2974 /* Pods_PsychonautWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18241B68552BF57DE603BAAB /* Pods_PsychonautWiki.framework */; };
 		5305161E1E5A670D00185831 /* Substances.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5305161D1E5A670D00185831 /* Substances.graphql */; };
 		530516201E5B6A8600185831 /* SubstancesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5305161F1E5B6A8600185831 /* SubstancesViewController.swift */; };
@@ -20,12 +21,14 @@
 		533488A31E5BAB4100F8B08A /* MultiLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533488A21E5BAB4100F8B08A /* MultiLineTableViewCell.swift */; };
 		5364D09A1E645A2D00B1F741 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5364D0991E645A2D00B1F741 /* GoogleService-Info.plist */; };
 		53664B3A1E5B91490064E730 /* ApolloClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53664B391E5B91490064E730 /* ApolloClient.swift */; };
+		53C65A671E89BDD1008A9E0F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C65A661E89BDD1008A9E0F /* StringExtensions.swift */; };
+		53C65A691E89BF88008A9E0F /* FuzzySearchText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C65A681E89BF88008A9E0F /* FuzzySearchText.swift */; };
+		53C65A6B1E89BFCD008A9E0F /* PsychonautWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C65A6A1E89BFCD008A9E0F /* PsychonautWikiTests.swift */; };
 		53D63A991E6897D80065F05D /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D63A981E6897D80065F05D /* Tracker.swift */; };
 		53D63A9B1E6899110065F05D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D63A9A1E6899110065F05D /* Logger.swift */; };
 		53FC6DBE1E5A5E2F00397CB6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBD1E5A5E2F00397CB6 /* MasterViewController.swift */; };
 		53FC6DC01E5A5E2F00397CB6 /* SubstanceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DBF1E5A5E2F00397CB6 /* SubstanceDetailViewController.swift */; };
 		53FC6DC51E5A5E3000397CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FC6DC41E5A5E3000397CB6 /* Assets.xcassets */; };
-		53FC6DD31E5A5E3000397CB6 /* PsychonautWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DD21E5A5E3000397CB6 /* PsychonautWikiTests.swift */; };
 		53FC6DDE1E5A5E3000397CB6 /* PsychonautWikiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC6DDD1E5A5E3000397CB6 /* PsychonautWikiUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0627ADC9416628254AF2CE84 /* Pods-PsychonautWikiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PsychonautWikiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PsychonautWikiTests/Pods-PsychonautWikiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		18241B68552BF57DE603BAAB /* Pods_PsychonautWiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PsychonautWiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5305161D1E5A670D00185831 /* Substances.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Substances.graphql; sourceTree = "<group>"; };
 		5305161F1E5B6A8600185831 /* SubstancesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstancesViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +64,9 @@
 		533488A21E5BAB4100F8B08A /* MultiLineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiLineTableViewCell.swift; sourceTree = "<group>"; };
 		5364D0991E645A2D00B1F741 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		53664B391E5B91490064E730 /* ApolloClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApolloClient.swift; sourceTree = "<group>"; };
+		53C65A661E89BDD1008A9E0F /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		53C65A681E89BF88008A9E0F /* FuzzySearchText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuzzySearchText.swift; sourceTree = "<group>"; };
+		53C65A6A1E89BFCD008A9E0F /* PsychonautWikiTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PsychonautWikiTests.swift; sourceTree = "<group>"; };
 		53D63A961E6896890065F05D /* PsychonautWiki-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PsychonautWiki-Bridging-Header.h"; sourceTree = "<group>"; };
 		53D63A981E6897D80065F05D /* Tracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
 		53D63A9A1E6899110065F05D /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -69,13 +76,14 @@
 		53FC6DC41E5A5E3000397CB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53FC6DC91E5A5E3000397CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53FC6DCE1E5A5E3000397CB6 /* PsychonautWikiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PsychonautWikiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		53FC6DD21E5A5E3000397CB6 /* PsychonautWikiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PsychonautWikiTests.swift; sourceTree = "<group>"; };
 		53FC6DD41E5A5E3000397CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53FC6DD91E5A5E3000397CB6 /* PsychonautWikiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PsychonautWikiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FC6DDD1E5A5E3000397CB6 /* PsychonautWikiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PsychonautWikiUITests.swift; sourceTree = "<group>"; };
 		53FC6DDF1E5A5E3000397CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CC5BDBB6C57136B87349D32 /* Pods-PsychonautWiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PsychonautWiki.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PsychonautWiki/Pods-PsychonautWiki.debug.xcconfig"; sourceTree = "<group>"; };
+		C3248F5777F855AADE50B67A /* Pods_PsychonautWikiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PsychonautWikiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4846BE35CDAD25A9A205BB /* Pods-PsychonautWiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PsychonautWiki.release.xcconfig"; path = "Pods/Target Support Files/Pods-PsychonautWiki/Pods-PsychonautWiki.release.xcconfig"; sourceTree = "<group>"; };
+		DE4C627C0BF84F03C6C7498D /* Pods-PsychonautWikiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PsychonautWikiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PsychonautWikiTests/Pods-PsychonautWikiTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28F1D711E5EDF1CA73B92111 /* Pods_PsychonautWikiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +187,7 @@
 			children = (
 				533488981E5B968900F8B08A /* UIViewControllerExtensions.swift */,
 				5334889A1E5B9CC700F8B08A /* ArrayExtension.swift */,
+				53C65A661E89BDD1008A9E0F /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -252,7 +262,8 @@
 		53FC6DD11E5A5E3000397CB6 /* PsychonautWikiTests */ = {
 			isa = PBXGroup;
 			children = (
-				53FC6DD21E5A5E3000397CB6 /* PsychonautWikiTests.swift */,
+				53C65A6A1E89BFCD008A9E0F /* PsychonautWikiTests.swift */,
+				53C65A681E89BF88008A9E0F /* FuzzySearchText.swift */,
 				53FC6DD41E5A5E3000397CB6 /* Info.plist */,
 			);
 			path = PsychonautWikiTests;
@@ -271,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				18241B68552BF57DE603BAAB /* Pods_PsychonautWiki.framework */,
+				C3248F5777F855AADE50B67A /* Pods_PsychonautWikiTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -280,6 +292,8 @@
 			children = (
 				9CC5BDBB6C57136B87349D32 /* Pods-PsychonautWiki.debug.xcconfig */,
 				CB4846BE35CDAD25A9A205BB /* Pods-PsychonautWiki.release.xcconfig */,
+				0627ADC9416628254AF2CE84 /* Pods-PsychonautWikiTests.debug.xcconfig */,
+				DE4C627C0BF84F03C6C7498D /* Pods-PsychonautWikiTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -315,9 +329,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53FC6DE51E5A5E3000397CB6 /* Build configuration list for PBXNativeTarget "PsychonautWikiTests" */;
 			buildPhases = (
+				482FC8CBBAC823CDC14D7E67 /* [CP] Check Pods Manifest.lock */,
 				53FC6DCA1E5A5E3000397CB6 /* Sources */,
 				53FC6DCB1E5A5E3000397CB6 /* Frameworks */,
 				53FC6DCC1E5A5E3000397CB6 /* Resources */,
+				85801BBD8D2DB9E61C1482E2 /* [CP] Embed Pods Frameworks */,
+				055A987CE51F6C2581E48E78 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -426,6 +443,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		055A987CE51F6C2581E48E78 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PsychonautWikiTests/Pods-PsychonautWikiTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		482FC8CBBAC823CDC14D7E67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		5315F4A41E5A64C8005A051F /* Apollo Codegen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -481,6 +528,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+		85801BBD8D2DB9E61C1482E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PsychonautWikiTests/Pods-PsychonautWikiTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		C7A122A866A27021579FB9E3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -545,6 +607,7 @@
 				530516251E5B6D1A00185831 /* SubstancesService.swift in Sources */,
 				5334889B1E5B9CC700F8B08A /* ArrayExtension.swift in Sources */,
 				533488A31E5BAB4100F8B08A /* MultiLineTableViewCell.swift in Sources */,
+				53C65A671E89BDD1008A9E0F /* StringExtensions.swift in Sources */,
 				5315F4A81E5A65E9005A051F /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,7 +616,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53FC6DD31E5A5E3000397CB6 /* PsychonautWikiTests.swift in Sources */,
+				53C65A691E89BF88008A9E0F /* FuzzySearchText.swift in Sources */,
+				53C65A6B1E89BFCD008A9E0F /* PsychonautWikiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +776,7 @@
 		};
 		53FC6DE61E5A5E3000397CB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0627ADC9416628254AF2CE84 /* Pods-PsychonautWikiTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -727,6 +792,7 @@
 		};
 		53FC6DE71E5A5E3000397CB6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE4C627C0BF84F03C6C7498D /* Pods-PsychonautWikiTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

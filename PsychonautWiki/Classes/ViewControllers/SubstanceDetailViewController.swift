@@ -9,11 +9,13 @@
 import UIKit
 import AlamofireImage
 import AutoLayoutHelperSwift
+import Regex
+import ImageSlideshow
 
 class SubstanceDetailViewController: UITableViewController {
     
     var tableHeaderView: UIView?
-    var tableHeaderImageWebView: UIWebView?
+    var tableHeaderImageSlideshow: ImageSlideshow?
     
     enum Sections: Int {
         case links = 0
@@ -31,45 +33,60 @@ class SubstanceDetailViewController: UITableViewController {
         }
     }
     
+    func getImageUrls() -> [URL] {
+        guard let substance = substance else { return [] }
+        
+        guard let substanceImages = substance.images else {
+            Logger.logWarn("Could not unwrap substance.images")
+            return []
+        }
+        
+        return substanceImages.flatMap { image in
+            guard var imageUrlString = image?.image else {
+                Logger.logWarn("Could not unwrap image?.image")
+                return nil
+            }
+            
+            if imageUrlString.hasSuffix(".svg") {
+                guard let imageThumbnailString = image?.thumb else { return nil }
+                imageUrlString = imageThumbnailString
+                let width = self.view.frame.width - 15
+                imageUrlString = imageUrlString.replacingFirstMatching("width=[0-9]+", with: "width=\(width)")
+            }
+                        
+            guard let imageUrl = URL(string: imageUrlString) else {
+                Logger.logWarn("Could not unwrap URL(string: imageUrlString)")
+                return nil
+            }
+            
+			return imageUrl
+        }
+        
+    }
+    
     func configureView() {
         guard let substance = substance else { return }
         self.navigationItem.title = substance.name
         
-        guard let substanceImages = substance.images else { 
-            Logger.logWarn("Could not unwrap substance.images")
-            return 
-        }
-        guard let firstImage = substanceImages.element(atIndex: 0) else { 
-            Logger.logWarn("Could not unwrap substanceImages.element(atIndex: 0)")
-            return 
-        }
-        guard let imageUrlString = firstImage?.image else { 
-            Logger.logWarn("Could not unwrap firstImage?.image")
-            return 
-        }
-        guard let imageUrl = URL(string: imageUrlString) else { 
-            Logger.logWarn("Could not unwrap URL(string: imageUrlString)")
-            return 
-        }
+        let imageUrls = self.getImageUrls()
         
         if self.tableHeaderView == nil {
             self.tableHeaderView = UIView()
-            self.tableHeaderImageWebView = UIWebView()
-            
-            self.tableHeaderView?.addSubview(tableHeaderImageWebView!)
+            tableHeaderView?.frame.size.height = 250
             
             let edgeInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-            self.tableHeaderImageWebView?.fillSuperView(edgeInset)
-            self.tableHeaderImageWebView?.contentMode = .scaleAspectFit
-            self.tableHeaderImageWebView?.backgroundColor = UIColor.white
-            self.tableHeaderImageWebView?.layer.borderWidth = 1
-            self.tableHeaderImageWebView?.layer.borderColor = UIColor.darkGray.cgColor
-            
+            self.tableHeaderImageSlideshow = ImageSlideshow()
+            self.tableHeaderImageSlideshow?.setImageInputs(imageUrls.map { imageUrl in
+            	AlamofireSource(url: imageUrl)
+            })
+            self.tableHeaderImageSlideshow?.preload = .all
+            self.tableHeaderImageSlideshow?.circular = false
+            self.tableHeaderImageSlideshow?.pageControl.pageIndicatorTintColor = UIColor.black
+            self.tableHeaderImageSlideshow?.pageControlPosition = .underScrollView
+            self.tableHeaderView?.addSubview(self.tableHeaderImageSlideshow!)
+            self.tableHeaderImageSlideshow?.fillSuperView(edgeInset)
             self.tableView.tableHeaderView = self.tableHeaderView
-            self.tableView.tableHeaderView?.frame.size.height = 250
         }
-        
-        self.tableHeaderImageWebView?.loadRequest(URLRequest(url: imageUrl))
     }
 
     override func viewDidLoad() {
@@ -100,7 +117,7 @@ class SubstanceDetailViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let indexPath = indexPath.section == Sections.effects.rawValue ? IndexPath(row: 0, section: indexPath.section) : indexPath
-        return super.tableView(tableView, heightForRowAt: indexPath) + 20
+        return super.tableView(tableView, heightForRowAt: indexPath) + 10
     }
     
     override func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
